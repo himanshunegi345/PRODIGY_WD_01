@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 16px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        #navbar a:hover {
+            color: #f00; /* Change color on hover */
+        }
+
+        #section {
+            padding: 60px 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</div>
+
+
+<script>
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var navbar = document.getElementById("navbar");
+        var scrollPosition =
+            window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollPosition > 10) {
+            navbar.style.backgroundColor = "#555";
+        } else {
+            navbar.style.backgroundColor = "#333";
+        }
+    }
+</script>
+
+
+</body>
+</html>
